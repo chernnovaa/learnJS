@@ -1,0 +1,95 @@
+.todo-section {
+  height: 100vh;
+  color: #333;
+  background: rgb(229, 93, 135);
+  background: radial-gradient(
+    circle,
+    rgba(229, 93, 135, 1) 0%,
+    rgba(95, 196, 228, 1) 100%
+  );
+  padding: 1rem;
+}
+
+.todo {
+  background-color: rgba(255, 255, 255, 0.4);
+  max-width: 38rem;
+  margin: 8.5rem auto 1.5rem;
+  padding: 2.5rem 3rem;
+  border-radius: 2rem;
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    text-align: center;
+    letter-spacing: 0.2rem;
+    box-shadow: 0 1.5rem 1rem rgba(0, 0, 0, 0.2);
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 1rem 2.5rem;
+    font-size: 1.5rem;
+  }
+
+  &__btn {
+    font-family: 'Lato', sans-serif;
+    outline: none;
+    border: none;
+    background-color: #5fc3e4;
+    padding: 1rem 2.5rem;
+    border-radius: 2rem;
+    color: #555;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: #e55d87;
+      color: #fff;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+  }
+
+  &__item {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+    position: relative;
+
+    &-checked {
+      color: #555;
+      text-decoration: line-through;
+    }
+  }
+
+  &__span {
+    position: absolute;
+    top: 8px;
+    right: 21px;
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    font-size: 2rem;
+    border-radius: 50%;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: #e55d87;
+      color: #fff;
+    }
+  }
+}

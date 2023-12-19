@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS projects</title>
+  <link rel="stylesheet" href="sass/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <section class="todo-section">
+    <div class="todo">
+      <h2 class="todo__title">To-Do List</h2>
+      <div class="todo__box">
+        <input class="todo__input" type="text" placeholder="write your task">
+        <button class="todo__btn">&plus;</button>
+      </div>
+      <ul class="todo__list">
+        <!-- <li class="todo__item todo__item-checked">Cook</li> -->
+        <!-- <span class="todo__span"></span> -->
+      </ul>
+    </div>
+  </section>
+
+  <section class="weather-section">
+    <div class="weather">
+      <div class="weather__search">
+        <input class="weather__input" type="text" placeholder="write city name" spellcheck="false">
+        <button class="weather__btn"><img src="img/search.svg" alt="search"></button>
+      </div>
+      <div class="weather__info">
+        <img class="weather__img" src="img/clouds.png" alt="icon">
+        <h2 class="weather__temp">22°C</h2>
+        <h3 class="weather__city">New York</h3>
+        <div class="weather__details">
+          <div class="weather-box">
+            <img class="weather-box__img" src="img/humidity.png" alt="humidity">
+            <p class="weather-box__text">Humidity</p>
+            <p class="weather-box__text">50%</p>
+          </div>
+          <div class="weather-box">
+            <img class="weather-box__img" src="img/wind.png" alt="wind">
+            <p class="weather-box__text">Wind speed</p>
+            <p class="weather-box__text">15 km/h</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
