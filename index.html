@@ -15,10 +15,10 @@
   <section class="todo-section">
     <div class="todo">
       <h2 class="todo__title">To-Do List</h2>
-      <div class="todo__box">
+      <form method="get" class="todo__box">
         <input class="todo__input" type="text" placeholder="write your task">
-        <button class="todo__btn">&plus;</button>
-      </div>
+        <button type="submit" class="todo__btn">&plus;</button>
+      </form>
       <ul class="todo__list">
         <!-- <li class="todo__item todo__item-checked">Cook</li> -->
         <!-- <span class="todo__span"></span> -->
@@ -28,24 +28,26 @@
 
   <section class="weather-section">
     <div class="weather">
-      <div class="weather__search">
-        <input class="weather__input" type="text" placeholder="write city name" spellcheck="false">
-        <button class="weather__btn"><img src="img/search.svg" alt="search"></button>
-      </div>
+      <form method="get" class="weather__search">
+        <input class="weather__input" type="text" placeholder="write city name" spellcheck="false" minlength="3"
+          maxlength="20" required pattern="[a-zA-Z]+">
+        <button type="submit" class="weather__btn"><img src="img/search.svg" alt="search"></button>
+      </form>
       <div class="weather__info">
-        <img class="weather__img" src="img/clouds.png" alt="icon">
+        <img class="weather__img" src="img/weather-2.png" alt="icon">
+        <p class="weather__description">Clouds</p>
         <h2 class="weather__temp">22°C</h2>
         <h3 class="weather__city">New York</h3>
         <div class="weather__details">
           <div class="weather-box">
             <img class="weather-box__img" src="img/humidity.png" alt="humidity">
             <p class="weather-box__text">Humidity</p>
-            <p class="weather-box__text">50%</p>
+            <p class="weather-box__text weather-box__text-humidity">50%</p>
           </div>
           <div class="weather-box">
             <img class="weather-box__img" src="img/wind.png" alt="wind">
             <p class="weather-box__text">Wind speed</p>
-            <p class="weather-box__text">15 km/h</p>
+            <p class="weather-box__text weather-box__text-speed">15 km/h</p>
           </div>
         </div>
       </div>
