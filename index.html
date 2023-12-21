@@ -15,10 +15,10 @@
   <section class="todo-section">
     <div class="todo">
       <h2 class="todo__title">To-Do List</h2>
-      <form method="get" class="todo__box">
+      <div class="todo__box">
         <input class="todo__input" type="text" placeholder="write your task">
-        <button type="submit" class="todo__btn">&plus;</button>
-      </form>
+        <button class="todo__btn">&plus;</button>
+      </div>
       <ul class="todo__list">
         <!-- <li class="todo__item todo__item-checked">Cook</li> -->
         <!-- <span class="todo__span"></span> -->
@@ -51,6 +51,52 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="password-section">
+    <div class="password">
+      <h2 class="password__title">Generate a <br> <span>Random Password</span></h2>
+      <div class="password__box">
+        <input class="password__input" type="text" spellcheck="false" placeholder="password">
+        <div class="password__icons">
+          <button class="password__btn password__btn-copy">
+            <img src="img/copy.png" alt="copy">
+          </button>
+          <!-- <button class="password__btn password__btn-reset">
+            <img src="img/reset.png" alt="reset">
+          </button> -->
+        </div>
+      </div>
+      <div class="password__indicator"></div>
+      <div class="password-length">
+        <div class="password-length__details">
+          <p class="password-length__text">Password length</p>
+          <span>15</span>
+        </div>
+        <input class="password-length__input" type="range" min="1" max="20" step="1">
+      </div>
+      <div class="password-settings">
+        <ul class="password-settings__list">
+          <li class="password-settings__item">
+            <input type="checkbox" id="lowercase">
+            <label for="lowercase">Lowercase (a - z)</label>
+          </li>
+          <li class="password-settings__item">
+            <input type="checkbox" id="uppercase">
+            <label for="uppercase">Uppercase (A - Z)</label>
+          </li>
+          <li class="password-settings__item">
+            <input type="checkbox" id="numbers">
+            <label for="numbers">Numbers (0 - 9)</label>
+          </li>
+          <li class="password-settings__item">
+            <input type="checkbox" id="symbols">
+            <label for="symbols">Symbols (!@#$%*...)</label>
+          </li>
+        </ul>
+      </div>
+      <button class="password__generate">Generate</button>
     </div>
   </section>
 

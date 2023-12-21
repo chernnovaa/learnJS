@@ -48,7 +48,9 @@
   }
 
   &__info {
+    opacity: 0;
     font-size: 1.8rem;
+    transition: all 1s;
   }
 
   &__img {

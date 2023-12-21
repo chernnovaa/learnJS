@@ -62,6 +62,7 @@ function lalala() {}
 //elements
 const weatherInput = document.querySelector('.weather__input');
 const searchBtn = document.querySelector('.weather__search');
+const weatherBox = document.querySelector('.weather__info');
 const cityName = document.querySelector('.weather__city');
 const weatherTemp = document.querySelector('.weather__temp');
 const weatherIcon = document.querySelector('.weather__img');
@@ -89,6 +90,7 @@ searchBtn.addEventListener('submit', async function (e) {
       humidity.innerHTML = `${data.main.humidity}%`;
       windSpeed.innerHTML = `${data.wind.speed}km/h`;
       weatherDescr.innerHTML = data.weather[0].description;
+      weatherBox.style.opacity = '100';
     });
 
   // let randomTemp = Math.trunc(Math.random() * (32 - -20 + 1)) + -20;
@@ -111,4 +113,34 @@ searchBtn.addEventListener('submit', async function (e) {
 
   weatherInput.value = '';
   weatherInput.blur();
+});
+
+//------------ password
+//elements
+const passwordInput = document.querySelector('.password__input');
+const generateBtn = document.querySelector('.password__generate');
+const copyBtn = document.querySelector('.password__btn-copy');
+
+const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz';
+const numbers = '0123456789';
+const specialCharacters = '!@#$%^&*()-_+=<>?';
+
+const allChar =
+  uppercaseLetters + lowercaseLetters + numbers + specialCharacters;
+console.log(allChar);
+
+const length = 12;
+
+generateBtn.addEventListener('click', function () {
+  const password = '';
+  password +=
+    uppercaseLetters[Math.floor(Math.random) * uppercaseLetters.length];
+  password +=
+    lowercaseLetters[Math.floor(Math.random) * lowercaseLetters.length];
+  password += numbers[Math.floor(Math.random) * numbers.length];
+  password +=
+    specialCharacters[Math.floor(Math.random) * specialCharacters.length];
+
+  while (length > password.length) {}
 });
