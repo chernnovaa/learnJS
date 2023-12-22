@@ -56,6 +56,7 @@ html {
   font-size: 2rem;
   border-radius: 4rem;
   margin-right: 2rem;
+  letter-spacing: 0.2rem;
 }
 .password__input::placeholder {
   letter-spacing: 0.6rem;
@@ -104,8 +105,20 @@ html {
   content: "";
   height: 100%;
   width: 50%;
-  background-color: yellow;
   border-radius: inherit;
+  transition: width 0.3s ease;
+}
+.password__indicator#weak::before {
+  width: 20%;
+  background-color: red;
+}
+.password__indicator#medium::before {
+  width: 50%;
+  background-color: yellow;
+}
+.password__indicator#strong::before {
+  width: 100%;
+  background-color: green;
 }
 .password-length {
   text-align: center;
@@ -129,6 +142,12 @@ html {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   list-style-type: none;
+}
+.password-settings__item:first-child {
+  pointer-events: none;
+}
+.password-settings__item:first-child input {
+  opacity: 0.5;
 }
 .password-settings__item label {
   cursor: pointer;

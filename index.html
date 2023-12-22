@@ -58,10 +58,10 @@
     <div class="password">
       <h2 class="password__title">Generate a <br> <span>Random Password</span></h2>
       <div class="password__box">
-        <input class="password__input" type="text" spellcheck="false" placeholder="password">
+        <input class="password__input" type="text" spellcheck="false" placeholder="password" disabled>
         <div class="password__icons">
           <button class="password__btn password__btn-copy">
-            <img src="img/copy.png" alt="copy">
+            <img class="password__copy-icon" src="img/copy.png" alt="copy">
           </button>
           <!-- <button class="password__btn password__btn-reset">
             <img src="img/reset.png" alt="reset">
@@ -72,27 +72,27 @@
       <div class="password-length">
         <div class="password-length__details">
           <p class="password-length__text">Password length</p>
-          <span>15</span>
+          <span class="password-length__span">15</span>
         </div>
         <input class="password-length__input" type="range" min="1" max="20" step="1">
       </div>
       <div class="password-settings">
         <ul class="password-settings__list">
           <li class="password-settings__item">
-            <input type="checkbox" id="lowercase">
-            <label for="lowercase">Lowercase (a - z)</label>
+            <input class="password-settings__input" type="checkbox" id="lowercaseLetters" checked>
+            <label for="lowercaseLetters">Lowercase (a - z)</label>
           </li>
           <li class="password-settings__item">
-            <input type="checkbox" id="uppercase">
-            <label for="uppercase">Uppercase (A - Z)</label>
+            <input class="password-settings__input" type="checkbox" id="uppercaseLetters">
+            <label for="uppercaseLetters">Uppercase (A - Z)</label>
           </li>
           <li class="password-settings__item">
-            <input type="checkbox" id="numbers">
+            <input class="password-settings__input" type="checkbox" id="numbers">
             <label for="numbers">Numbers (0 - 9)</label>
           </li>
           <li class="password-settings__item">
-            <input type="checkbox" id="symbols">
-            <label for="symbols">Symbols (!@#$%*...)</label>
+            <input class="password-settings__input" type="checkbox" id="specialSymbols">
+            <label for="specialSymbols">Symbols (!@#$%*...)</label>
           </li>
         </ul>
       </div>
@@ -100,7 +100,7 @@
     </div>
   </section>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 
 </html>

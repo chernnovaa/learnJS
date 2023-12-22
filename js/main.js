@@ -54,10 +54,6 @@ btnAdd.addEventListener('click', function () {
   inputWindow.blur();
 });
 
-const lalal = () => {};
-
-function lalala() {}
-
 //------------ weather
 //elements
 const weatherInput = document.querySelector('.weather__input');
@@ -119,28 +115,67 @@ searchBtn.addEventListener('submit', async function (e) {
 //elements
 const passwordInput = document.querySelector('.password__input');
 const generateBtn = document.querySelector('.password__generate');
+const settings = document.querySelectorAll('.password-settings__input');
 const copyBtn = document.querySelector('.password__btn-copy');
+const lengthInput = document.querySelector('.password-length__input');
+const lengthValue = document.querySelector('.password-length__span');
+const passwordIndicator = document.querySelector('.password__indicator');
+const copyPassword = document.querySelector('.password__btn-copy');
+const copyIcon = document.querySelector('.password__copy-icon');
 
-const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz';
-const numbers = '0123456789';
-const specialCharacters = '!@#$%^&*()-_+=<>?';
+//name the same as id in input
+const characters = {
+  lowercaseLetters: 'abcdefghijklmnopqrstuvwxyz',
+  uppercaseLetters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  numbers: '0123456789',
+  specialSymbols: '!@#$%^&*()-_+=<>?',
+};
 
-const allChar =
-  uppercaseLetters + lowercaseLetters + numbers + specialCharacters;
-console.log(allChar);
-
-const length = 12;
-
+//generate random password
 generateBtn.addEventListener('click', function () {
-  const password = '';
-  password +=
-    uppercaseLetters[Math.floor(Math.random) * uppercaseLetters.length];
-  password +=
-    lowercaseLetters[Math.floor(Math.random) * lowercaseLetters.length];
-  password += numbers[Math.floor(Math.random) * numbers.length];
-  password +=
-    specialCharacters[Math.floor(Math.random) * specialCharacters.length];
+  let staticPassword = '';
+  let randomPassword = '';
+  let passLength = lengthInput.value;
 
-  while (length > password.length) {}
+  //looping through each settings checkbox
+  settings.forEach(setting => {
+    if (setting.checked) {
+      //adding particular key velue from characters object to staticPassword
+      staticPassword += characters[setting.id];
+    }
+  });
+
+  for (let i = 0; i < passLength; i++) {
+    randomPassword +=
+      staticPassword[Math.floor(Math.random() * staticPassword.length)];
+  }
+  console.log(randomPassword);
+  passwordInput.value = randomPassword;
+
+  //update indicator
+  const updateIndicator = () => {
+    if (lengthInput.value <= 5) {
+      passwordIndicator.id = 'weak';
+    } else if (lengthInput.value <= 12) {
+      passwordIndicator.id = 'medium';
+    } else {
+      passwordIndicator.id = 'strong';
+    }
+  };
+  updateIndicator();
+});
+
+//update length value
+lengthInput.addEventListener('input', () => {
+  console.log(lengthInput.value);
+  lengthValue.textContent = lengthInput.value;
+});
+
+//copy password
+copyPassword.addEventListener('click', function () {
+  navigator.clipboard.writeText(passwordInput.value); //copying
+  copyIcon.src = `img/done.png`;
+  setTimeout(() => {
+    copyIcon.src = 'img/copy.png';
+  }, 1500);
 });
