@@ -179,3 +179,59 @@ copyPassword.addEventListener('click', function () {
     copyIcon.src = 'img/copy.png';
   }, 1500);
 });
+
+// // --------------------------- test
+// const worldBtn = document.querySelector('.world__btn');
+// const worldName = document.querySelector('.world__title-name');
+
+// worldBtn.addEventListener('click', function () {
+//   const yourName = prompt('Please write your name:');
+//   console.log(yourName);
+//   worldName.textContent = yourName;
+//   console.log('cl');
+// });
+
+// ------------ background
+//elements
+const backgroundBtn = document.querySelector('.background__btn');
+const colorName = document.querySelector('.background__color-span');
+const backgroundColor = document.querySelector('.background__color');
+
+const hexValues = [
+  '0',
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  'A',
+  'B',
+  'C',
+  'D',
+  'F',
+];
+
+function getRandomHexValue() {
+  const randomIndexPosition = Math.floor(Math.random() * hexValues.length);
+  const randomHexValue = hexValues[randomIndexPosition];
+  return randomHexValue;
+}
+
+function getRandomHexString(stringLength) {
+  let hexString = '';
+  for (let i = 0; i < stringLength; i++) {
+    hexString += getRandomHexValue();
+  }
+  return hexString;
+}
+
+backgroundBtn.addEventListener('click', () => {
+  const randomHexString = '#' + getRandomHexString(6);
+  colorName.textContent = randomHexString;
+  backgroundColor.style.backgroundColor = randomHexString;
+  console.log(randomHexString);
+});

@@ -1,0 +1,58 @@
+.background-section {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000000;
+  color: #fff;
+  height: 70vh;
+}
+
+.background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  &__color {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+
+    & span {
+      background-color: #000000;
+      color: #fff;
+      border-radius: 50%;
+      padding: 2rem;
+      font-size: 2rem;
+      letter-spacing: 0.3rem;
+      text-transform: lowercase;
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  &__btn {
+    border: none;
+    background-color: #fff;
+    color: #000000;
+    border-radius: 50%;
+    margin-top: 4rem;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    width: 10rem;
+    height: 10rem;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: #000000;
+      color: #fff;
+    }
+  }
+}
