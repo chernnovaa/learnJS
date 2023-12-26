@@ -16,43 +16,43 @@
 
 //---------- todo
 //elements
-const inputWindow = document.querySelector('.todo__input');
-const testListGet = document.getElementsByClassName('todo__list')[0];
-const listContainer = document.querySelector('.todo__list');
-const btnAdd = document.querySelector('.todo__btn');
+// const inputWindow = document.querySelector('.todo__input');
+// const testListGet = document.getElementsByClassName('todo__list')[0];
+// const listContainer = document.querySelector('.todo__list');
+// const btnAdd = document.querySelector('.todo__btn');
 
-btnAdd.addEventListener('click', function () {
-  const inputTitle = inputWindow.value;
-  console.log(inputTitle);
+// btnAdd.addEventListener('click', function () {
+//   const inputTitle = inputWindow.value;
+//   console.log(inputTitle);
 
-  if (!inputTitle) {
-    alert('No value !');
-  } else {
-    //create list element (li)
-    let listElement = document.createElement('li');
-    listElement.classList.add('todo__item');
-    listElement.innerHTML = inputWindow.value;
-    listContainer.appendChild(listElement);
+//   if (!inputTitle) {
+//     alert('No value !');
+//   } else {
+//     //create list element (li)
+//     let listElement = document.createElement('li');
+//     listElement.classList.add('todo__item');
+//     listElement.innerHTML = inputWindow.value;
+//     listContainer.appendChild(listElement);
 
-    //create span (x)
-    let spanElement = document.createElement('span');
-    spanElement.classList.add('todo__span');
-    spanElement.innerHTML = '\u00D7';
-    listElement.appendChild(spanElement);
+//     //create span (x)
+//     let spanElement = document.createElement('span');
+//     spanElement.classList.add('todo__span');
+//     spanElement.innerHTML = '\u00D7';
+//     listElement.appendChild(spanElement);
 
-    //add line-through when clicked on list element, task completed
-    listElement.addEventListener('click', function () {
-      this.classList.add('todo__item-checked');
-    });
+//     //add line-through when clicked on list element, task completed
+//     listElement.addEventListener('click', function () {
+//       this.classList.add('todo__item-checked');
+//     });
 
-    //remove list element when clicken on (x)
-    spanElement.addEventListener('click', () => {
-      listElement.remove();
-    });
-  }
-  inputWindow.value = '';
-  inputWindow.blur();
-});
+//     //remove list element when clicken on (x)
+//     spanElement.addEventListener('click', () => {
+//       listElement.remove();
+//     });
+//   }
+//   inputWindow.value = '';
+//   inputWindow.blur();
+// });
 
 //------------ weather
 //elements
@@ -180,7 +180,7 @@ copyPassword.addEventListener('click', function () {
   }, 1500);
 });
 
-// // --------------------------- test
+// // --------------------------- test world
 // const worldBtn = document.querySelector('.world__btn');
 // const worldName = document.querySelector('.world__title-name');
 
@@ -215,12 +215,16 @@ const hexValues = [
   'F',
 ];
 
+//create one random element
 function getRandomHexValue() {
+  //random number
   const randomIndexPosition = Math.floor(Math.random() * hexValues.length);
+  //random hex value
   const randomHexValue = hexValues[randomIndexPosition];
   return randomHexValue;
 }
 
+//create random string
 function getRandomHexString(stringLength) {
   let hexString = '';
   for (let i = 0; i < stringLength; i++) {
@@ -234,4 +238,61 @@ backgroundBtn.addEventListener('click', () => {
   colorName.textContent = randomHexString;
   backgroundColor.style.backgroundColor = randomHexString;
   console.log(randomHexString);
+});
+
+// ---------------- test counter
+// const counterValueElement = document.querySelector('.counter__value');
+// const btnPlusElement = document.querySelector('.counter__plus');
+// const btnMinusElement = document.querySelector('.counter__minus');
+// const counterBackground = document.querySelector('.counter-section');
+
+// let counterValue = 0;
+// const counterLimit = 20;
+
+// const counterUpdateDisplay = () => {
+//   if (counterValue > counterLimit) {
+//     counterValue = 20;
+//   } else if (counterValue < 0) {
+//     counterValue = 0;
+//   }
+
+//   counterValueElement.textContent = counterValue;
+//   counterBackground.style.setProperty(
+//     'background-color',
+//     `rgb(${(counterValue / counterLimit) * 255}, 64, 0)`
+//   );
+// };
+
+// btnPlusElement.addEventListener('click', () => {
+//   counterValue += 1;
+//   counterUpdateDisplay();
+// });
+
+// btnMinusElement.addEventListener('click', () => {
+//   counterValue -= 1;
+//   counterUpdateDisplay();
+// });
+// counterUpdateDisplay();
+
+// ----------- tabbed
+const tabbedList = document.querySelector('.tabbed__list');
+const tabbedLinks = document.querySelectorAll('.tabbed__list-link');
+const tabbedContentElements = document.querySelectorAll('.tabbed__content');
+
+const removeActiveLinks = () => {
+  tabbedLinks.forEach(link => link.parentElement.classList.remove('active'));
+};
+
+const hideSections = () => {
+  tabbedContentElements.forEach(section => section.classList.add('hidden'));
+};
+
+tabbedLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    removeActiveLinks();
+    hideSections();
+    link.parentElement.classList.add('active');
+    const tabbedContentElement = document.querySelector(link.hash);
+    tabbedContentElement.classList.remove('hidden');
+  });
 });

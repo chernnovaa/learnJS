@@ -24,6 +24,7 @@
   align-items: center;
   justify-content: center;
   margin-top: 4rem;
+  transition: background-color 0.5s;
 }
 .background__color span {
   background-color: #000000;
@@ -206,6 +207,146 @@ html {
 .password-settings__item label {
   cursor: pointer;
   margin-left: 0.5rem;
+}
+
+.tabbed-section {
+  font-family: "Poppins", sans-serif;
+  background-color: #f7f2ea;
+  color: #000000;
+  height: 100vh;
+  padding: 1rem;
+}
+
+.tabbed {
+  margin: 0 auto;
+  margin-top: 10rem;
+  max-width: 62rem;
+}
+.tabbed__text {
+  font-size: 1.5rem;
+  font-style: italic;
+  max-width: 22rem;
+  text-align: center;
+  margin: 0 auto;
+}
+.tabbed__list {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  list-style-type: none;
+  background-color: #f7f2ea;
+  margin-top: 2rem;
+}
+@media only screen and (max-width: 660px) {
+  .tabbed__list {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+}
+.tabbed__list-item {
+  padding: 2rem;
+}
+.tabbed__list-link {
+  text-decoration: none;
+  color: #000000;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+}
+.tabbed__content-img {
+  width: 100px;
+  height: 100px;
+}
+.tabbed-container {
+  padding: 4rem 2rem;
+  background-color: #fff;
+  border-bottom-right-radius: 8rem;
+  border-bottom-left-radius: 8rem;
+}
+@media only screen and (max-width: 660px) {
+  .tabbed-container {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-top: 2rem;
+  }
+}
+.tabbed__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  gap: 2rem;
+}
+@media only screen and (max-width: 660px) {
+  .tabbed__content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.active {
+  background-color: #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+.world-section {
+  font-family: "Poppins", sans-serif;
+  background-color: #000000;
+  color: #fff;
+  height: 30vh;
+}
+
+.world {
+  text-align: center;
+}
+.world__title {
+  font-size: 4rem;
+}
+.world__title-name {
+  color: #e9d362;
+}
+.world__btn {
+  font-size: 2rem;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 3rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  letter-spacing: 0.5rem;
+}
+
+.counter-section {
+  font-family: "Poppins", sans-serif;
+  background-color: #000000;
+  color: #fff;
+  height: 30vh;
+  padding: 1rem;
+}
+
+.counter {
+  text-align: center;
+  color: #fff;
+  margin-top: 2rem;
+}
+.counter__value {
+  font-size: 4rem;
+}
+.counter__box {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+}
+.counter__plus, .counter__minus {
+  font-size: 2rem;
+  border: none;
+  border-radius: 3rem;
+  width: 6rem;
+  height: 6rem;
+  text-align: center;
 }
 
 .todo-section {

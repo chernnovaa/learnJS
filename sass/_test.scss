@@ -1,0 +1,63 @@
+.world-section {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000000;
+  color: #fff;
+  height: 30vh;
+}
+
+.world {
+  text-align: center;
+
+  &__title {
+    font-size: 4rem;
+
+    &-name {
+      color: #e9d362;
+    }
+  }
+
+  &__btn {
+    font-size: 2rem;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 3rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    letter-spacing: 0.5rem;
+  }
+}
+
+.counter-section {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000000;
+  color: #fff;
+  height: 30vh;
+  padding: 1rem;
+}
+
+.counter {
+  text-align: center;
+  color: #fff;
+  margin-top: 2rem;
+
+  &__value {
+    font-size: 4rem;
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  &__plus,
+  &__minus {
+    font-size: 2rem;
+    border: none;
+    border-radius: 3rem;
+    width: 6rem;
+    height: 6rem;
+    text-align: center;
+  }
+}

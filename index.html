@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <section class="todo-section">
+  <!-- <section class="todo-section">
     <div class="todo">
       <h2 class="todo__title">To-Do List</h2>
       <div class="todo__box">
@@ -20,11 +20,9 @@
         <button class="todo__btn">&plus;</button>
       </div>
       <ul class="todo__list">
-        <!-- <li class="todo__item todo__item-checked">Cook</li> -->
-        <!-- <span class="todo__span"></span> -->
       </ul>
     </div>
-  </section>
+  </section> -->
 
   <section class="weather-section">
     <div class="weather">
@@ -100,8 +98,8 @@
     </div>
   </section>
 
-  <!-- <section class="world">
-    <div class="world__box">
+  <!-- <section class="world-section">
+    <div class="world">
       <h3 class="world__title">Hello <span class="world__title-name">User</span></h3>
       <button class="world__btn">click</button>
     </div>
@@ -112,6 +110,94 @@
       <h2 class="background__title">random background color</h2>
       <p class="background__color"><span class="background__color-span">#000000</span></p>
       <button class="background__btn">go</button>
+    </div>
+  </section>
+
+  <!-- <section class="counter-section">
+    <div class="counter">
+      <p class="counter__value">0</p>
+      <div class="counter__box">
+        <button class="counter__plus">+</button>
+        <button class="counter__minus">-</button>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="tabbed-section">
+    <div class="tabbed">
+      <p class="tabbed__text">"Tea is not just a drink, it's a way of life and a way to connect with our loved ones."
+      </p>
+      <ul class="tabbed__list">
+        <li class="tabbed__list-item active">
+          <a class="tabbed__list-link" href="#section1">Black</a>
+        </li>
+        <li class="tabbed__list-item">
+          <a class="tabbed__list-link" href="#section2">Green</a>
+        </li>
+        <li class="tabbed__list-item">
+          <a class="tabbed__list-link" href="#section3">White</a>
+        </li>
+        <li class="tabbed__list-item">
+          <a class="tabbed__list-link" href="#section4">Oolong</a>
+        </li>
+        <li class="tabbed__list-item">
+          <a class="tabbed__list-link" href="#section5">Pu-erh</a>
+        </li>
+      </ul>
+      <article class="tabbed-container">
+        <div class="tabbed__content" id="section1">
+          <img class="tabbed__content-img" src="img/black-tea.svg" alt="Black tea">
+          <ul class="tabbed__content-list">
+            <li class="tabbed__content-item">Processing: Fully oxidized.</li>
+            <li class="tabbed__content-item">Flavor: Robust, malty, and sometimes astringent.</li>
+            <li class="tabbed__content-item">Caffeine: Moderate to high.</li>
+            <li class="tabbed__content-item">Examples: Assam, Darjeeling, Earl Grey.</li>
+          </ul>
+        </div>
+        <div class="tabbed__content hidden" id="section2">
+          <img class="tabbed__content-img" src="img/green-tea.svg" alt="Green tea">
+          <ul class="tabbed__content-list">
+            <li class="tabbed__content-item">Processing: Unoxidized, heated to halt oxidation.</li>
+            <li class="tabbed__content-item">Flavor: Fresh, grassy, and often vegetal.</li>
+            <li class="tabbed__content-item">Caffeine: Moderate.</li>
+            <li class="tabbed__content-item">Examples: Sencha, Matcha, Dragon Well.</li>
+          </ul>
+        </div>
+        <div class="tabbed__content hidden" id="section3">
+          <img class="tabbed__content-img" src="img/white-tea.svg" alt="White tea">
+          <ul class="tabbed__content-list">
+            <li class="tabbed__content-item">Processing: Minimal oxidation, often sun-dried.</li>
+            <li class="tabbed__content-item">Flavor: Delicate, subtle, with natural sweetness.</li>
+            <li class="tabbed__content-item">Caffeine: Low to moderate.</li>
+            <li class="tabbed__content-item">Examples: Silver Needle, Bai Mu Dan.</li>
+          </ul>
+        </div>
+        <div class="tabbed__content hidden" id="section4">
+          <img class="tabbed__content-img" src="img/oolong-tea.svg" alt="Oolong tea">
+          <ul class="tabbed__content-list">
+            <li class="tabbed__content-item">Processing: Partially oxidized (between green and black).</li>
+            <li class="tabbed__content-item">Flavor: Wide range, from floral and fruity to roasted and complex.</li>
+            <li class="tabbed__content-item">Caffeine: Moderate.</li>
+            <li class="tabbed__content-item">Examples: Tie Guan Yin, Da Hong Pao.</li>
+          </ul>
+        </div>
+        <div class="tabbed__content hidden" id="section5">
+          <img class="tabbed__content-img" src="img/pueur-tea.svg" alt="Pu-eur tea">
+          <ul class="tabbed__content-list">
+            <li class="tabbed__content-item">Processing: Post-fermented and aged.</li>
+            <li class="tabbed__content-item">Flavor: Earthy, mellow, with unique aged characteristics.</li>
+            <li class="tabbed__content-item">Caffeine: Moderate to high.</li>
+            <li class="tabbed__content-item">Examples: Sheng (raw) Pu-erh, Shu (ripe) Pu-erh.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="testimonials-section">
+    <div class="testimonials">
+      <h2 class="testimonials__title">Testimonials</h2>
+      <div id="testimonials-container"></div>
     </div>
   </section>
 
