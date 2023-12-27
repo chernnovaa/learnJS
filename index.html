@@ -176,7 +176,7 @@
           <img class="tabbed__content-img" src="img/oolong-tea.svg" alt="Oolong tea">
           <ul class="tabbed__content-list">
             <li class="tabbed__content-item">Processing: Partially oxidized (between green and black).</li>
-            <li class="tabbed__content-item">Flavor: Wide range, from floral and fruity to roasted and complex.</li>
+            <li class="tabbed__content-item">Flavor: Wide range, from floral and fruity to roasted.</li>
             <li class="tabbed__content-item">Caffeine: Moderate.</li>
             <li class="tabbed__content-item">Examples: Tie Guan Yin, Da Hong Pao.</li>
           </ul>
@@ -191,13 +191,32 @@
           </ul>
         </div>
       </article>
+      <div class="testimonials">
+        <h2 class="testimonials__title">Testimonials</h2>
+        <div class="testimonials-container" id="testimonials-container"></div>
+      </div>
     </div>
   </section>
 
-  <section class="testimonials-section">
-    <div class="testimonials">
-      <h2 class="testimonials__title">Testimonials</h2>
-      <div id="testimonials-container"></div>
+  <section class="timer-section">
+    <div class="timer">
+      <div class="timer__inputs">
+        <label for="hoursInput">Hours :</label>
+        <input type="text" id="hoursInput" min="0" value="0">
+        <label for="minutesInput">Minutes :</label>
+        <input type="text" id="minutesInput" min="0" value="0">
+        <label for="secondsInput">Seconds :</label>
+        <input type="text" id="secondsInput" min="0" value="0">
+
+        <button class="timer__btn" id="startTimer">start</button>
+      </div>
+      <div class="timer__box">
+        <h2>
+          <div id="hoursOutput"></div>
+          <div id="minutesOutput"></div>
+          <div id="secondsOutput"></div>
+        </h2>
+      </div>
     </div>
   </section>
 

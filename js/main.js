@@ -296,3 +296,138 @@ tabbedLinks.forEach(link => {
     tabbedContentElement.classList.remove('hidden');
   });
 });
+
+// ------------ testimonials
+testimonials = [
+  {
+    author: {
+      name: 'Gabriel Moore',
+      image: 'author-01.jpg',
+    },
+    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum consectetur, deserunt cupiditate architecto deleniti ipsum eos atque dolores maiores dignissimos esse sed exercitationem tempora, quis, blanditiis voluptate? Voluptatibus, optio totam.',
+    date: '23rd May',
+  },
+  {
+    author: {
+      name: 'Billy Bailey',
+      image: 'author-02.jpg',
+    },
+    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum consectetur, deserunt cupiditate architecto deleniti ipsum eos atque dolores maiores dignissimos esse sed exercitationem tempora, quis, blanditiis voluptate? Voluptatibus, optio totam.',
+    date: '25rd May',
+  },
+  {
+    author: {
+      name: 'Jackie Oliver',
+      image: 'author-03.jpg',
+    },
+    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum consectetur, deserunt cupiditate architecto deleniti ipsum eos atque dolores maiores dignissimos esse sed exercitationem tempora, quis, blanditiis voluptate? Voluptatibus, optio totam.',
+    date: '2nd June',
+  },
+  {
+    author: {
+      name: 'Pauline Carter',
+      image: 'author-04.jpg',
+    },
+    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum consectetur, deserunt cupiditate architecto deleniti ipsum eos atque dolores maiores dignissimos esse sed exercitationem tempora, quis, blanditiis voluptate? Voluptatibus, optio totam.',
+    date: '9th June',
+  },
+];
+
+const containerElement = document.getElementById('testimonials-container');
+
+const makeTestimonialCard = testimonial => {
+  return `<div class="testimonials__card">
+  <img src="img/${testimonial.author.image}" alt="author">
+  <h2>${testimonial.author.name}</h2>
+  <p>${testimonial.text}</p>
+  <date>Written on ${testimonial.date}</date>
+  </div>`;
+};
+
+let currentTestimonial = 0;
+
+const nextTestimonial = () => {
+  if (currentTestimonial < testimonials.length - 1) {
+    currentTestimonial += 1;
+    updatePage();
+  }
+};
+
+const prevTestimonial = () => {
+  if (currentTestimonial > 0) {
+    currentTestimonial -= 1;
+    updatePage();
+  }
+};
+
+const updatePage = () => {
+  let markup = makeTestimonialCard(testimonials[currentTestimonial]);
+
+  if (testimonials.length > 1) {
+    markup += `<div class='testimonials__buttons'>
+    <button onclick='prevTestimonial()'>←</button>
+    <button onclick='nextTestimonial()'>→</button></div>`;
+  }
+
+  containerElement.innerHTML = markup;
+};
+
+updatePage();
+
+// ------------- timer
+const hoursInputElement = document.getElementById('hoursInput');
+const minutesInputElement = document.getElementById('minutesInput');
+const secondsInputElement = document.getElementById('secondsInput');
+
+const hoursOutputElement = document.getElementById('hoursOutput');
+const minutesOutputElement = document.getElementById('minutesOutput');
+const secondsOutputElement = document.getElementById('secondsOutput');
+
+const btnTimer = document.getElementById('startTimer');
+
+let targetTime;
+let timerInterval;
+
+const updateTimer = () => {
+  if (targetTime) {
+    const differenceInSeconds = Math.floor((targetTime - Date.now()) / 1000);
+    if (differenceInSeconds < 1) {
+      clearInterval(timerInterval);
+    }
+    const hours = Math.floor(differenceInSeconds / 3600);
+    const minutes = Math.floor(differenceInSeconds / 60) % 60;
+    const seconds = Math.floor(differenceInSeconds % 60);
+
+    hoursOutputElement.textContent = `${hours} hours`;
+    minutesOutputElement.textContent = `${minutes} minutes`;
+    secondsOutputElement.textContent = `${seconds} seconds`;
+  }
+};
+
+btnTimer.addEventListener('click', () => {
+  const fututeHours = parseInt(hoursInputElement.value);
+  const futureMinutes = parseInt(minutesInputElement.value);
+  const futureSeconds = parseInt(secondsInputElement.value);
+
+  const date = new Date();
+  const currentHours = date.getHours();
+  const currenMinutes = date.getMinutes();
+  const currentSeconds = date.getSeconds();
+
+  date.setHours(currentHours + fututeHours);
+  date.setMinutes(currenMinutes + futureMinutes);
+  date.setSeconds(currentSeconds + futureSeconds);
+
+  targetTime = date.getTime();
+  localStorage.setItem('targetTime', targetTime);
+  updateTimer();
+  timerInterval = setInterval(updateTimer, 500);
+});
+
+const storedTargetTime = localStorage.getItem('targetTime');
+if (storedTargetTime) {
+  targetTime = storedTargetTime;
+  updateTimer();
+  timerInterval = setInterval(updateTimer, 500);
+}
+updateTimer();
