@@ -1,0 +1,46 @@
+.calculator-section {
+  background-color: rgba(0, 0, 0, 0.82);
+}
+
+.calculator {
+  max-width: 40rem;
+  padding: 2rem;
+  margin: 5rem auto 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.7);
+  border-radius: 1rem;
+
+  &__input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.7) inset;
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+
+    &-equal {
+      grid-row: span 3;
+    }
+  }
+
+  &__button {
+    padding: 1rem;
+    background-color: #fff;
+    font-size: 2rem;
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+}

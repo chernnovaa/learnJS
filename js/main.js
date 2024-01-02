@@ -464,3 +464,79 @@ shoppingContainer.addEventListener('submit', function (e) {
   shoppingInput.value = '';
   shoppingInput.blur();
 });
+
+// -------- calculator
+const calculatorButtons = document.querySelectorAll('.calculator__button ');
+const calculatorInput = document.getElementById('result');
+
+for (let i = 0; i < calculatorButtons.length; i++) {
+  calculatorButtons[i].addEventListener('click', () => {
+    const calculatorButtonValue = calculatorButtons[i].textContent;
+
+    if (calculatorButtonValue === 'C') {
+      clearResult();
+    } else if (calculatorButtonValue === '=') {
+      calculateResult();
+    } else {
+      appendValue(calculatorButtonValue);
+    }
+  });
+}
+
+function clearResult() {
+  calculatorInput.value = '';
+}
+
+function calculateResult() {
+  calculatorInput.value = eval(calculatorInput.value);
+}
+
+function appendValue(calculatorButtonValue) {
+  calculatorInput.value += calculatorButtonValue;
+}
+
+// -------------- pomodoro
+const startBtn = document.getElementById('start');
+const stopBtn = document.getElementById('stop');
+const resetBtn = document.getElementById('reset');
+const pomodoroTimer = document.getElementById('timer');
+
+let interval;
+let timeLeft = 1500;
+
+function updatePomodoroTimer() {
+  let pomodoroMinutes = Math.floor(timeLeft / 60);
+  let pomodoroSeconds = timeLeft % 60;
+
+  let formattedTime = `${pomodoroMinutes
+    .toString()
+    .padStart(2, '0')}:${pomodoroSeconds.toString().padStart(2, '0')}`;
+
+  pomodoroTimer.innerHTML = formattedTime;
+}
+
+function startTimer() {
+  interval = setInterval(() => {
+    timeLeft--;
+    updatePomodoroTimer();
+    if (timeLeft === 0) {
+      clearInterval(interval);
+      pomodoroTimer.innerHTML = 'Good Job';
+      timeLeft = 1500;
+      updatePomodoroTimer();
+    }
+  }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(interval);
+}
+function resetTimer() {
+  clearInterval(interval);
+  timeLeft = 1500;
+  updatePomodoroTimer();
+}
+
+startBtn.addEventListener('click', startTimer);
+stopBtn.addEventListener('click', stopTimer);
+resetBtn.addEventListener('click', resetTimer);

@@ -57,10 +57,50 @@ html {
   box-sizing: border-box;
   font-size: 62.5%; }
 
+input,
+button {
+  border: none;
+  outline: none; }
+
 .section {
   font-family: 'Poppins', sans-serif;
   height: 100vh;
   padding: 2rem; }
+
+.calculator-section {
+  background-color: rgba(0, 0, 0, 0.82); }
+
+.calculator {
+  max-width: 40rem;
+  padding: 2rem;
+  margin: 5rem auto 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.7);
+  border-radius: 1rem; }
+  .calculator__input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.7) inset; }
+  .calculator__buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 2rem; }
+    .calculator__buttons-equal {
+      grid-row: span 3; }
+  .calculator__button {
+    padding: 1rem;
+    background-color: #fff;
+    font-size: 2rem;
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.3s; }
+    .calculator__button:hover {
+      background-color: transparent;
+      box-shadow: none; }
 
 .password-section {
   background: #274046;
@@ -91,8 +131,6 @@ html {
     border-radius: 4rem; }
   .password__input {
     width: 100%;
-    outline: none;
-    border: none;
     background-color: #fff;
     padding: 1rem;
     font-size: 2rem;
@@ -106,8 +144,6 @@ html {
     display: flex;
     gap: 2rem; }
   .password__btn {
-    border: none;
-    outline: none;
     background-color: #fff; }
     .password__btn img {
       width: 3rem;
@@ -118,8 +154,6 @@ html {
     padding: 2rem 4rem;
     font-size: 2rem;
     background-color: #00f5a0;
-    border: none;
-    outline: none;
     border-radius: 4rem;
     transition: all 0.5s;
     letter-spacing: 0.4rem;
@@ -176,6 +210,9 @@ html {
       cursor: pointer;
       margin-left: 0.5rem; }
 
+.pomodoro-section {
+  background-color: #951700; }
+
 .shopping-section {
   background: #606c88;
   background: linear-gradient(180deg, #606c88 0%, #3f4c6b 100%);
@@ -186,7 +223,8 @@ html {
   max-width: 50rem;
   margin: 10rem auto 0;
   padding: 2rem;
-  border-radius: 2rem; }
+  border-radius: 2rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.7); }
   .shopping__title {
     text-align: center;
     text-transform: uppercase;
@@ -200,8 +238,6 @@ html {
     margin-top: 2rem; }
   .shopping__input, .shopping__btn {
     width: 100%;
-    border: none;
-    outline: none;
     padding: 1rem;
     border-radius: 2rem;
     font-size: 1.5rem;
@@ -328,8 +364,6 @@ html {
   margin-top: 1rem; }
   .testimonials__buttons button {
     padding: 1rem 2rem;
-    border: none;
-    outline: none;
     background-color: #f7f2ea;
     border-radius: 50%;
     font-size: 2rem;
@@ -397,15 +431,11 @@ html {
     letter-spacing: 0.2rem; }
   .timer__inputs input {
     max-width: 8rem;
-    border: none;
-    outline: none;
     padding: 1rem 2rem;
     font-size: 1.5rem;
     border-radius: 2rem; }
 
 .timer__btn {
-  border: none;
-  outline: none;
   padding: 1rem 2rem;
   border-radius: 2rem;
   font-size: 1.8rem;
@@ -457,15 +487,11 @@ html {
     border-radius: 2rem;
     margin-bottom: 2rem; }
   .todo__input {
-    border: none;
-    outline: none;
     background-color: transparent;
     padding: 1rem 2.5rem;
     font-size: 1.5rem; }
   .todo__btn {
     font-family: 'Lato', sans-serif;
-    outline: none;
-    border: none;
     background-color: #5fc3e4;
     padding: 1rem 2.5rem;
     border-radius: 2rem;
@@ -517,8 +543,6 @@ html {
     align-items: center; }
   .weather__input {
     width: 100%;
-    border: none;
-    outline: none;
     background-color: #f0f0f0;
     color: #000;
     padding: 1rem 2.5rem;
@@ -528,8 +552,6 @@ html {
     font-size: 1.5rem; }
   .weather__btn {
     border-radius: 35%;
-    border: none;
-    outline: none;
     cursor: pointer;
     background-color: #f0f0f0;
     width: 6rem;

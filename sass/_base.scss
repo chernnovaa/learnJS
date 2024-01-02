@@ -11,6 +11,12 @@ html {
   font-size: 62.5%;
 }
 
+input,
+button {
+  border: none;
+  outline: none;
+}
+
 .section {
   font-family: 'Poppins', sans-serif;
   height: 100vh;
