@@ -66,13 +66,16 @@ html {
   font-size: 62.5%;
 }
 
-.password-section {
+.section {
   font-family: "Poppins", sans-serif;
+  height: 100vh;
+  padding: 2rem;
+}
+
+.password-section {
   background: rgb(39, 64, 70);
   background: linear-gradient(180deg, rgb(39, 64, 70) 0%, rgb(0, 0, 0) 100%);
-  height: 100vh;
   color: #fff;
-  padding: 1rem;
 }
 
 .password {
@@ -209,13 +212,71 @@ html {
   margin-left: 0.5rem;
 }
 
+.shopping-section {
+  background: rgb(96, 108, 136);
+  background: linear-gradient(180deg, rgb(96, 108, 136) 0%, rgb(63, 76, 107) 100%);
+  color: #fff;
+}
+
+.shopping {
+  background-color: rgba(255, 255, 255, 0.5);
+  max-width: 50rem;
+  margin: 10rem auto 0;
+  padding: 2rem;
+  border-radius: 2rem;
+}
+.shopping__title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  letter-spacing: 0.5rem;
+  font-weight: 400;
+}
+.shopping__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+.shopping__input, .shopping__btn {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  background-color: #fff;
+  color: #000;
+}
+.shopping__btn {
+  margin-top: 1rem;
+  color: #3f4c6b;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  transition: all 0.3s;
+}
+.shopping__btn:hover {
+  background-color: transparent;
+  color: #fff;
+}
+.shopping__list-element {
+  font-size: 2rem;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+.shopping__list-span {
+  color: #3f4c6b;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
 .tabbed-section {
-  font-family: "Poppins", sans-serif;
   background: rgb(247, 242, 234);
   background: linear-gradient(180deg, rgb(247, 242, 234) 0%, rgb(255, 255, 255) 100%);
   color: #000000;
-  height: 100%;
-  padding: 1rem;
 }
 
 .tabbed {
@@ -404,11 +465,8 @@ html {
 }
 
 .timer-section {
-  font-family: "Poppins", sans-serif;
   background-color: #000000;
   color: #fff;
-  height: 100vh;
-  padding: 2rem;
 }
 
 .timer__inputs {
@@ -544,11 +602,8 @@ html {
 }
 
 .weather-section {
-  font-family: "Poppins", sans-serif;
   background-color: rgba(0, 0, 0, 0.82);
-  height: 100vh;
   color: #fff;
-  padding: 1rem;
 }
 
 .weather {

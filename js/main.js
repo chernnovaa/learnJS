@@ -431,3 +431,36 @@ if (storedTargetTime) {
   timerInterval = setInterval(updateTimer, 500);
 }
 updateTimer();
+
+// ------------- shopping
+const shoppingInput = document.querySelector('.shopping__input');
+const shoppingAddBtn = document.querySelector('.shopping__btn');
+const shoppingContainer = document.querySelector('.shopping__container');
+const shoppingList = document.querySelector('.shopping__list');
+
+shoppingContainer.addEventListener('submit', function (e) {
+  e.preventDefault();
+  const shoppingItem = shoppingInput.value;
+  console.log(shoppingItem);
+
+  if (!shoppingItem) {
+    shoppingItem.textContent = '';
+  } else {
+    const shoppingElement = document.createElement('li');
+    shoppingElement.classList.add('shopping__list-element');
+    shoppingElement.innerHTML = shoppingItem;
+    shoppingList.appendChild(shoppingElement);
+
+    const shoppingDeleteElement = document.createElement('span');
+    shoppingDeleteElement.classList.add('shopping__list-span');
+    shoppingDeleteElement.innerHTML = '\u00D7';
+    shoppingElement.appendChild(shoppingDeleteElement);
+
+    shoppingDeleteElement.addEventListener('click', () => {
+      shoppingElement.remove();
+    });
+  }
+
+  shoppingInput.value = '';
+  shoppingInput.blur();
+});
