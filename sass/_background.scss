@@ -16,6 +16,11 @@
     text-transform: uppercase;
   }
 
+  &-box {
+    display: flex;
+    gap: 7rem;
+  }
+
   &__color {
     width: 250px;
     height: 250px;

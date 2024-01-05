@@ -12,6 +12,9 @@
     font-size: 3rem;
     letter-spacing: 0.5rem;
     text-transform: uppercase; }
+  .background-box {
+    display: flex;
+    gap: 7rem; }
   .background__color {
     width: 250px;
     height: 250px;
@@ -211,7 +214,44 @@ button {
       margin-left: 0.5rem; }
 
 .pomodoro-section {
-  background-color: #951700; }
+  background-color: #951700;
+  text-align: center;
+  color: #fafafa; }
+  .pomodoro-section__title {
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: 0.4rem; }
+  .pomodoro-section__text {
+    font-size: 1.2rem;
+    font-style: italic;
+    letter-spacing: 0.5rem;
+    margin-top: 1rem; }
+
+.pomodoro {
+  margin: 10rem 0 auto; }
+  .pomodoro__timer {
+    font-size: 10rem;
+    letter-spacing: 0.8rem; }
+  .pomodoro__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    margin-top: 2rem; }
+  .pomodoro__button {
+    font-size: 2rem;
+    padding: 1rem;
+    color: #951700;
+    letter-spacing: 0.4rem;
+    width: 10rem;
+    font-style: italic;
+    border-radius: 1rem;
+    background-color: #fafafa;
+    transition: all 0.3s;
+    cursor: pointer; }
+    .pomodoro__button:hover {
+      background-color: transparent;
+      color: #fafafa; }
 
 .shopping-section {
   background: #606c88;

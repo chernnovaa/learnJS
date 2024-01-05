@@ -197,6 +197,9 @@ const backgroundBtn = document.querySelector('.background__btn');
 const colorName = document.querySelector('.background__color-span');
 const backgroundColor = document.querySelector('.background__color');
 
+const backgroundRgb = document.querySelector('.background__color-rgb');
+const colorNameRgb = document.querySelector('.background__color-span--rgb');
+
 const hexValues = [
   '0',
   '1',
@@ -238,7 +241,16 @@ backgroundBtn.addEventListener('click', () => {
   colorName.textContent = randomHexString;
   backgroundColor.style.backgroundColor = randomHexString;
   console.log(randomHexString);
+
+  backgroundRgb.style.backgroundColor = randomRgbColor(0, 255);
+  console.log(randomRgbColor());
+  //colorNameRgb.textContent = randomRgbColor();
 });
+
+const randomRgb = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+const randomRgbColor = () =>
+  `rgb(${randomRgb(0, 255)}, ${randomRgb(0, 255)}, ${randomRgb(0, 255)})`;
 
 // ---------------- test counter
 // const counterValueElement = document.querySelector('.counter__value');
@@ -288,7 +300,8 @@ const hideSections = () => {
 };
 
 tabbedLinks.forEach(link => {
-  link.addEventListener('click', () => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
     removeActiveLinks();
     hideSections();
     link.parentElement.classList.add('active');
@@ -441,7 +454,6 @@ const shoppingList = document.querySelector('.shopping__list');
 shoppingContainer.addEventListener('submit', function (e) {
   e.preventDefault();
   const shoppingItem = shoppingInput.value;
-  console.log(shoppingItem);
 
   if (!shoppingItem) {
     shoppingItem.textContent = '';

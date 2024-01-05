@@ -15,6 +15,10 @@
   letter-spacing: 0.5rem;
   text-transform: uppercase;
 }
+.background-box {
+  display: flex;
+  gap: 7rem;
+}
 .background__color {
   width: 250px;
   height: 250px;
